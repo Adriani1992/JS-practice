@@ -11,7 +11,7 @@ const tick = ()=>{
     // console.log(m);
     // console.log(s);
 
-    clock.innerHTML=`${h} : ${m} : ${s}`;
+    clock.innerHTML=`<span>${h}</span> : <span>${m}</span> : <span>${s}</span>`;
 
 }
 
