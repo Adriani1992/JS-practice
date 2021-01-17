@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            margin: 10px 0;
+            background-color: tomato;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="copy-me">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+    <div class="box">move the mouse around this box</div>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+    <script>
+        const copy_me = document.querySelector('.copy-me');
+        const box = document.querySelector('.box');
+
+        copy_me.addEventListener('copy', () => {
+            alert('Heyyyyyy watch out!!!!! this is copyright!!')
+        });
+
+        box.addEventListener('mousemove', (e) => {
+            console.log(e)
+            box.textContent = (`x-pos: ${e.offsetX}, y-pos: ${e.offsetY}`)
+        });
+
+        document.addEventListener('wheel', (e) => {
+            console.log(e);
+        });
+
+    </script>
+</body>
+
+</html>

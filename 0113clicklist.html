@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            list-style: none;
+        }
+
+        li {
+            background-color: tomato;
+            color: wheat;
+            margin: .5rem;
+            width: 250px;
+            padding: .5rem;
+            transition: .5s;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul>To Do
+        <li>Buy Milk</li>
+        <li>Read a Book</li>
+        <li>Play the guitar</li>
+        <li>Pay the bills</li>
+    </ul>
+    <input type="text" name="list" id="dolist"><br>
+    <button>Add to do list</button>
+
+    <script>
+        // const clickbtn = document.querySelector('button');
+
+        // clickbtn.addEventListener('click', () => {
+        //     console.log('click me')
+        // });
+        const text = document.querySelector('#dolist');
+        const btn = document.querySelector('button');
+        const list = document.querySelectorAll('li');
+        const listmama = document.querySelector('ul');
+
+
+        btn.addEventListener('click', () => {
+            let txt = text.value;
+            let txt_create = document.createElement('li');
+            txt_create.textContent = txt;
+            listmama.append(txt_create);
+        });
+
+
+        // list.forEach(li => {
+        //     li.addEventListener('click', (e) => {
+        //         let x = e.target;
+        //         x.remove();
+        //         // x.style.textDecoration = 'line-through'
+        //     });
+        // });
+
+        listmama.addEventListener('click', (e) => {
+            let deletetarget = e.target;
+            deletetarget.remove();
+        });
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

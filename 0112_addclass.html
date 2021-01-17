@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 300px;
+            text-align: center;
+        }
+
+        .error {
+            color: tomato;
+            border: solid 1px tomato;
+
+        }
+
+        .success {
+            color: olive;
+            border: solid 1px olive;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="title">Hello 2021</h1>
+
+    <div class="msg error">
+        <p>This is an error message!!</p>
+    </div>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi officiis dolorum eligendi commodi, minima modi
+        maxime facilis repellendus expedita. Necessitatibus vel et impedit fugiat nulla nostrum, assumenda molestiae
+        saepe eos!</p>
+
+
+
+    <script>
+        const msg = document.querySelector('.msg');
+        msg.classList.remove('error');
+        msg.classList.add('success');
+
+    </script>
+</body>
+
+</html>

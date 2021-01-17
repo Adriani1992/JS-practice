@@ -1,0 +1,33 @@
+body {
+	font-family: 'East Sea Dokdo', cursive;
+	background-color: #f9eed3;
+	color: #333333;
+}
+
+.container {
+	max-width: 400px;
+}
+
+h1,
+span {
+	color: #333333;
+}
+
+input[type=text],
+input[type=text]:focus {
+	color: #fff;
+	border: none;
+	background-color: #668b8a;
+	max-width: 400px;
+}
+
+.todos li {
+	background-color: #9fb083;
+}
+
+.delete {
+	cursor: pointer;
+}
+.todos .filtered {
+	display: none !important;
+}
