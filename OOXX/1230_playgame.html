@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #fffcbb;
+            font-family: 'East Sea Dokdo', cursive;
+        }
+
+        .intro,
+        .result {
+            background-color: tomato;
+            color: white;
+            font-family: 'East Sea Dokdo', cursive;
+        }
+
+        .btn {
+            border: double 1px #0d5eaf;
+            font-size: 24px;
+            color: #0d5eaf;
+        }
+
+        .btn:hover {
+            background-color: #0d5eaf;
+            color: #fff;
+        }
+
+
+        .whoseturn {
+            border: solid 2px #0d5eaf;
+            width: 80px;
+            height: 80px;
+            text-align: center;
+            background-color: #0d5eaf;
+            display: none;
+        }
+
+        .wrap {
+            width: 300px;
+        }
+
+
+        .box {
+            width: 100px;
+            height: 100px;
+            /* background-color: wheat; */
+            border-left: 1px solid navy;
+
+            text-align: center;
+            line-height: 1.3;
+
+        }
+
+        .box-1 {
+            width: 100px;
+            height: 100px;
+            /* background-color: wheat; */
+            border-left: 10px solid #0d5eaf;
+            border-bottom: 10px solid #0d5eaf;
+            text-align: center;
+            line-height: 1.3;
+            padding: 5px;
+            overflow: hidden;
+            display: none;
+
+        }
+
+        .circle {
+            font-size: 3rem;
+            color: tomato;
+
+        }
+
+        .line {
+            width: 300px;
+            height: 10px;
+            background-color: navy;
+            position: absolute;
+            top: 15%;
+        }
+
+        .cross {
+            font-size: 3rem;
+            color: navy;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="intro py-3 text-center">
+        <div class="container">
+            <h2 class="display-3 my-4">Little Game</h2>
+        </div>
+    </div>
+    <div class="result py-3 text-center">
+        <div class="result"></div>
+    </div>
+
+    <div class="container">
+        <button class="start btn mt-1 ">Start</button>
+        <button class="restart btn mt-1 ">Reset</button>
+    </div>
+    <div class="container mt-3">
+        <div class="whoseturn mt-2">
+            <i class="far fa-circle circle"></i>
+        </div>
+
+        <div class="row justify-content-center">
+
+            <div class="wrap d-flex flex-wrap mt-3">
+
+                <div class="box box-1 b-1" style="border-left:none;">
+                </div>
+                <div class="box box-1 b-2">
+                </div>
+                <div class="box box-1 b-3"></div>
+                <div class="box box-1 b-4" style="border-left:none;"></div>
+                <div class="box box-1 b-5"></div>
+                <div class="box box-1 b-6"></div>
+                <div class="box box-1 b-7" style="border-left:none; border-bottom:none;"></div>
+                <div class="box box-1 b-8" style="border-bottom: none;"></div>
+                <div class="box box-1 b-9" style="border-bottom: none;"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+        $('.start').on('click', function () {
+            $('.box-1').css('display', 'block')
+            $('.whoseturn').css('display', 'block')
+        });
+        $('.restart').on('click', function () {
+            setTimeout(function () {
+                location.reload()
+            }, 2000)
+        });
+        // let result = $('.result').html();
+        const whoseturn = $('.whoseturn').html();
+        let icon = '<i class="far fa-circle circle"></i>';
+        $('.box').on('click', function () {
+
+            let start = $(this).html();
+
+            if (start = ' ') {
+                // console.log('hi');
+                $(this).html(`${icon}`);
+
+
+                let next = $(this).html();
+                if (next == '<i class="far fa-circle circle"></i>') {
+                    icon = '<i class="fas fa-times cross "></i>';
+                    $('.whoseturn').html(`${icon}`);
+                    // console.log(next);
+
+                }
+                else if (icon == '<i class="fas fa-times cross "></i>') {
+                    icon = '<i class="far fa-circle circle"></i>';
+                    $('.whoseturn').html(`${icon}`);
+                }
+
+
+
+            }
+            const b_1 = $('.b-1').html();
+            const b_2 = $('.b-2').html();
+            const b_3 = $('.b-3').html();
+            const b_4 = $('.b-4').html();
+            const b_5 = $('.b-5').html();
+            const b_6 = $('.b-6').html();
+            const b_7 = $('.b-7').html();
+            const b_8 = $('.b-8').html();
+            const b_9 = $('.b-9').html();
+
+            // let msg = '<h2>win!!!</h2>';
+            if (b_1 !== ' ' && b_1 == b_2 && b_2 == b_3) {
+                $('.ide').addClass('line');
+                if (b_1 == '<i class="far fa-circle circle"></i>') {
+                    $('.result').html(`<h2>Circle win!!!</h2>`);
+                } else {
+                    $('.result').html(`<h2>Cross win!!!</h2>`);
+
+                }
+
+
+            } else if (b_1 !== ' ' && b_1 == b_5 && b_5 == b_9) {
+                if (b_1 == '<i class="far fa-circle circle"></i>') {
+                    $('.result').html(`<h2>Circle win!!!</h2>`);
+                } else {
+                    $('.result').html(`<h2>Cross win!!!</h2>`);
+                }
+            } else if (b_1 !== ' ' && b_1 == b_4 && b_4 == b_7) {
+                if (b_1 == '<i class="far fa-circle circle"></i>') {
+                    $('.result').html(`<h2>Circle win!!!</h2>`);
+                } else {
+                    $('.result').html(`<h2>Cross win!!!</h2>`);
+                }
+            } else if (b_2 !== '' && b_2 == b_5 && b_5 == b_8) {
+                if (b_2 == '<i class="far fa-circle circle"></i>') {
+                    $('.result').html(`<h2>Circle win!!!</h2>`);
+                } else {
+                    $('.result').html(`<h2>Cross win!!!</h2>`);
+                }
+            } else if (b_3 !== '' && b_3 == b_5 && b_5 == b_7) {
+                if (b_3 == '<i class="far fa-circle circle"></i>') {
+                    $('.result').html(`<h2>Circle win!!!</h2>`);
+                } else {
+                    $('.result').html(`<h2>Cross win!!!</h2>`);
+                }
+            } else if (b_3 !== '' && b_3 == b_6 && b_6 == b_9) {
+                if (b_3 == '<i class="far fa-circle circle"></i>') {
+                    $('.result').html(`<h2>Circle win!!!</h2>`);
+                } else {
+                    $('.result').html(`<h2>Cross win!!!</h2>`);
+                }
+            } else if (b_4 !== '' && b_4 == b_5 && b_5 == b_6) {
+                if (b_4 == '<i class="far fa-circle circle"></i>') {
+                    $('.result').html(`<h2>Circle win!!!</h2>`);
+                } else {
+                    $('.result').html(`<h2>Cross win!!!</h2>`);
+                }
+            } else if (b_7 !== '' && b_7 == b_8 && b_8 == b_9) {
+                if (b_7 == '<i class="far fa-circle circle"></i>') {
+                    $('.result').html(`<h2>Circle win!!!</h2>`);
+                } else {
+                    $('.result').html(`<h2>Cross win!!!</h2>`);
+                }
+            } else if (b_1 !== '' && b_2 !== '' && b_3 !== '' && b_4 !== '' && b_5 !== '' && b_6 !== '' && b_7 !== '' && b_8 !== '' && b_9 !== '') {
+                $('.result').html(`<h2>Draw!!!</h2>`);
+            }
+
+
+
+        });
+
+
+
+
+    </script>
+</body>
+
+</html>
