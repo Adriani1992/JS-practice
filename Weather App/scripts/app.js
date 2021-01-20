@@ -16,7 +16,7 @@ city.addEventListener('submit', e=>{
     e.preventDefault();
 
     //get city value
-// console.log(city.city);
+console.log(city.city);
     const location = city.city.value.trim();
     city.reset();
 
