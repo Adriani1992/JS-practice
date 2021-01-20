@@ -1,0 +1,10 @@
+body {
+	font-family: 'East Sea Dokdo', cursive;
+	background-color: #bbded6;
+	letter-spacing: 0.2rem;
+	font-size: .8rem;
+}
+
+.container {
+	max-width: 400px;
+}
