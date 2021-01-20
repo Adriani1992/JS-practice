@@ -15,6 +15,7 @@ const getTodos = async ()=>{
 };
 
 
+
 getTodos()
 .then((data)=>{
     console.log('resolved:', data)
