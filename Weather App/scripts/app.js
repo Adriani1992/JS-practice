@@ -10,7 +10,7 @@ const UpdateUi = function(data){
    //const {cityDets, weather} = data
    //means it will find the value call cityDets in data then set it in the variable name cityDets and also the value equals
    //to cityDets either.
-   //const cityDets = data.cityDets === const {cityDets}
+    //const cityDets = data.cityDets === const {cityDets}
 
     detail.innerHTML =` <h5 class="my-3">${cityDets.EnglishName}</h5>
                 <div class="my-3">${weather.WeatherText}</div>
