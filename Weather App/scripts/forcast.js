@@ -31,11 +31,11 @@ const getCity = async(city)=>{
    
 };
 
-getCity('osaka')
-.then(data=> {
-   return getweather(data.Key);
-}).then(data=> console.log(data))
-.catch(err => console.log(err));
+// getCity('osaka')
+// .then(data=> {
+//    return getweather(data.Key);
+// }).then(data=> console.log(data))
+// .catch(err => console.log(err));
 
 // getweather('2421828')
 // .then(data => console.log(data))
