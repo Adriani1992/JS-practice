@@ -45,6 +45,7 @@ console.log(city.city);
     .then(data=>console.log(data))
     .catch(err => console.log(err));
 });
+//something happened
 
 
 
