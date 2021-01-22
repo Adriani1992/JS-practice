@@ -25,11 +25,22 @@ const getCity = async(city)=>{
     const query = `?apikey=${key}&q=${city}`;
 
     const response = await fetch(base + query);
+    // const url = await fetch(base + query).then(response => response.text() )
+    // .then(text => console.log(text))
+    // .catch(()=> console.log("can't access" + url + "response"))
+    
     const data = await response.json();
+   
 
     return data[0];
    
 };
+
+// const url = "https://example.com"; // site that doesn’t send Access-Control-*
+// fetch(url)
+//     .then(response => response.text())
+//     .then(contents => console.log(contents))
+//     .catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))
 
 // getCity('osaka')
 // .then(data=> {
