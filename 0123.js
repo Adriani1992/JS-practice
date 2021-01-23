@@ -36,3 +36,34 @@ class bestFriend extends Friend{
 const old = new bestFriend('Efy', 31, 5, 'effy')
 
 console.log(old)
+
+//make the obj without using class
+
+function tomodachi(name, age){
+    this.name = name;
+    this.age = age;
+}
+
+const Sakura = new tomodachi('sakura', 13);
+
+
+
+tomodachi.prototype.collectCard = function(){
+    console.log(`${this.name} named the card as Sakura card!`)
+}
+
+Sakura.collectCard()
+console.log(Sakura)
+
+function newClassMate(name, age, comefrom){
+    tomodachi.call(this, name, age);
+    this.comefrom = comefrom;
+}
+
+
+
+
+newClassMate.prototype = Object.create(tomodachi.prototype)
+
+const Akiho = new newClassMate('Akiho', 13, 'UK');
+
