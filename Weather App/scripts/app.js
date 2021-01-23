@@ -3,6 +3,7 @@ const card = document.querySelector('.card');
 const detail = document.querySelector('.detail');
 const time = document.querySelector('.time');
 const icon = document.querySelector('.icon img');
+const forecast = new Forecast();
 
 
 const UpdateUi = function(data){
@@ -47,35 +48,44 @@ const UpdateUi = function(data){
 
 
 
-const updateCity = async(city)=>{
-    const cityDets = await getCity(city);
-    //coz the forcast.js is behind the app.js, it's able to call function we set in forecast .js
-    const weather = await getweather(cityDets.Key);
-
-    return{
-        cityDets:cityDets,
-        //you can delete one of this, if they are use same name. => only cityDets
-        weather:weather,
+// const updateCity = async(city)=>{
+//     const cityDets = await getCity(city);
+//     //coz the forcast.js is behind the app.js, it's able to call function we set in forecast .js
+//     const weather = await getweather(cityDets.Key);
+   
+//     return{
+//         cityDets:cityDets,
+//         //you can delete one of this, if they are use same name. => only cityDets
+//         weather:weather,
 
 
         
-    };
-};
+//     };
+// };
 
 city.addEventListener('submit', e=>{
     //prevent default action
     e.preventDefault();
 
     //get city value
-console.log(city.city);
+// console.log(city.city);
     const location = city.city.value.trim();
     city.reset();
 
-    updateCity(location)
+    forecast.updateCity(location)
     .then(data=>UpdateUi(data))
     .catch(err => console.log(err));
+
+    localStorage.setItem('city', location)
 });
-//something happened
+//local storage
+// if(localStorage.getItem('city')){
+//    forecast.updateCity(localStorage.getItem('city'))
+//     .then(data => UpdateUi(data))
+//     .catch(err => console.log(err));
+// }
+
+
 
 
 
