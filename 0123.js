@@ -21,4 +21,18 @@ class Friend {
 const newFriend = new Friend('Leo', 20,0);
 console.log(newFriend)
 
-newFriend.makefriend().longfrined().longfrined()
+class bestFriend extends Friend{
+    constructor(name, age, yr, nickname){
+        super(name, age, yr)
+        this.nickname =nickname;
+    }
+    deleteFriend(name){
+        const friendList = list.filter((p)=>{
+            return p.name !== name.name
+        })
+    }
+}
+
+const old = new bestFriend('Efy', 31, 5, 'effy')
+
+console.log(old)
