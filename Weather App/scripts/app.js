@@ -1,6 +1,8 @@
 const city = document.querySelector('.change-location');
 const card = document.querySelector('.card');
 const detail = document.querySelector('.detail');
+const time = document.querySelector('.time');
+const icon = document.querySelector('.icon img');
 
 
 const UpdateUi = function(data){
@@ -16,8 +18,34 @@ const UpdateUi = function(data){
                 <div class="my-3">${weather.WeatherText}</div>
                 <div class="display-4 my-4">
                     <span>${weather.Temperature.Metric.Value}</span>
-                    <span>&deg;C</span>`
+                    <span>&deg;C</span>`;
+
+    const weatherIcon = `img/icons/${weather.WeatherIcon}.svg`;
+
+    icon.setAttribute('src', weatherIcon);
+
+    let timeSrc = null;
+    if (weather.IsDayTime) {
+        timeSrc = 'img/day.svg'
+    } else {
+        timeSrc = 'img/night.svg'
+    };
+
+    
+
+    time.setAttribute('src', timeSrc)
+
+                if(card.classList.contains('d-none')){
+                    card.classList.remove('d-none')
+                }
+
+
 }
+
+//update the image
+
+
+
 
 const updateCity = async(city)=>{
     const cityDets = await getCity(city);
@@ -28,6 +56,8 @@ const updateCity = async(city)=>{
         cityDets:cityDets,
         //you can delete one of this, if they are use same name. => only cityDets
         weather:weather,
+
+
         
     };
 };
@@ -42,7 +72,7 @@ console.log(city.city);
     city.reset();
 
     updateCity(location)
-    .then(data=>console.log(data))
+    .then(data=>UpdateUi(data))
     .catch(err => console.log(err));
 });
 //something happened
