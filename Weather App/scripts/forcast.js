@@ -25,6 +25,7 @@ const getCity = async(city)=>{
     const query = `?apikey=${key}&q=${city}`;
 
     const response = await fetch(base + query);
+    //aviod CROS method//
     // const url = await fetch(base + query).then(response => response.text() )
     // .then(text => console.log(text))
     // .catch(()=> console.log("can't access" + url + "response"))
