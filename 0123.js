@@ -64,6 +64,7 @@ function newClassMate(name, age, comefrom){
 
 
 newClassMate.prototype = Object.create(tomodachi.prototype)
+//https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Object/create
 
 const Akiho = new newClassMate('Akiho', 13, 'UK');
 
