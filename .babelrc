@@ -1,0 +1,4 @@
+{
+    "presets": ["@babel/preset-env"]
+}
+//computer is gonna to know use this preset to do it.
