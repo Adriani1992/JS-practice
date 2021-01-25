@@ -1,0 +1,1 @@
+(()=>{console.log("Jenny hurry!!! get out the town!!");const s=new class{constructor(s,t,e){this.name=s,this.age=t,this.title}}("Jenny",15,"Princess");console.log(s);const t=new class{constructor(s,t,e){this.name=s,this.age=t,this.title}}("Leo",15,"Princess");console.log(t)})();
